@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
+import { submitContactForm } from "@/lib/data";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, message } = body;
+    const { name, email, phone, message } = body;
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -12,8 +13,14 @@ export async function POST(request: Request) {
       );
     }
 
-    // Mock delay to simulate sending an email or saving to a database
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const result = await submitContactForm({ name, email, phone, message });
+
+    if (!result.success) {
+      return NextResponse.json(
+        { error: result.error },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json(
       { success: true, message: "Your message has been received. We will get back to you shortly." },

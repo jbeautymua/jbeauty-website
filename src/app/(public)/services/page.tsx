@@ -1,14 +1,8 @@
-"use client";
+import { getServiceCategories } from "@/lib/data";
+import ServicesContent from "@/components/services/ServicesContent";
 
-import { useState } from "react";
-import { serviceCategories } from "@/data/mockData";
-import CategoryFilter from "@/components/services/CategoryFilter";
-import ServiceList from "@/components/services/ServiceList";
-
-export default function ServicesPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  const categoryNames = serviceCategories.map((cat) => cat.name);
+export default async function ServicesPage() {
+  const categories = await getServiceCategories();
 
   return (
     <main className="min-h-screen bg-background pb-16">
@@ -23,20 +17,7 @@ export default function ServicesPage() {
         </p>
       </section>
 
-      {/* Category Filter */}
-      <CategoryFilter
-        categories={categoryNames}
-        activeCategory={activeCategory}
-        onSelect={setActiveCategory}
-      />
-
-      {/* Service Listings */}
-      <section className="pt-6">
-        <ServiceList
-          categories={serviceCategories}
-          activeCategory={activeCategory}
-        />
-      </section>
+      <ServicesContent categories={categories} />
     </main>
   );
 }
