@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Instagram, MessageCircle } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -47,7 +48,7 @@ export default function Footer() {
                 aria-label="Message us on WhatsApp"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-white"
               >
-                <MessageCircle className="h-5 w-5" />
+                <WhatsAppIcon className="h-5 w-5" />
               </a>
             </div>
           </div>

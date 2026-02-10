@@ -1,10 +1,11 @@
 "use client";
 
-import { MessageCircle, Phone, Instagram, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Instagram, Mail, MapPin, Clock } from "lucide-react";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 
 const contactMethods = [
   {
-    icon: MessageCircle,
+    icon: WhatsAppIcon,
     label: "Chat on WhatsApp",
     href: "https://wa.me/447533046269",
   },
