@@ -6,7 +6,9 @@
       "Bash(npm install:*)",
       "Bash(npx next build:*)",
       "Bash(npx tsc:*)",
-      "Bash(del \"D:\\\\jss-beauty_claude\\\\src\\\\data\\\\mockData.ts\")"
+      "Bash(del \"D:\\\\jss-beauty_claude\\\\src\\\\data\\\\mockData.ts\")",
+      "Bash(cat:*)",
+      "Bash(ls:*)"
     ]
   }
 }
