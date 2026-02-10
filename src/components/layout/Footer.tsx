@@ -20,7 +20,7 @@ const openingHours = [
 export default function Footer() {
   return (
     <footer className="bg-secondary/30 border-t border-border">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-[1400px] px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* Business Info */}
           <div>

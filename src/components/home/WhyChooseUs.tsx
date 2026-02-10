@@ -47,7 +47,7 @@ const itemVariants = {
 export default function WhyChooseUs() {
   return (
     <section className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-[1400px] mx-auto">
         <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-bold text-center mb-12">
           Why Choose JSS Beauty
         </h2>

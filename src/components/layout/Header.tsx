@@ -83,7 +83,7 @@ export default function Header() {
           isScrolled ? "bg-white shadow-md" : "bg-transparent"
         }`}
       >
-        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <nav className="mx-auto flex h-20 max-w-[1400px] items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <Link
             href="/"
@@ -93,74 +93,77 @@ export default function Header() {
             JSS Beauty
           </Link>
 
-          {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-sm font-medium text-text-secondary transition-colors duration-200 hover:text-primary"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          {/* Right-side actions */}
-          <div className="flex items-center gap-3">
-            {/* Phone button */}
-            <a
-              href="tel:+447533046269"
-              className="flex h-10 w-10 items-center justify-center rounded-full text-text-secondary transition-colors duration-200 hover:bg-secondary hover:text-primary"
-              aria-label="Call us"
-            >
-              <Phone className="h-5 w-5" />
-            </a>
-
-            {/* Book Now CTA */}
-            <a
-              href="https://widget.treatwell.co.uk/place/jss-beauty/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:brightness-110 hover:shadow-md"
-            >
-              Book Now
-            </a>
-
-            {/* Mobile hamburger button */}
-            <button
-              ref={toggleButtonRef}
-              type="button"
-              className="flex h-10 w-10 items-center justify-center rounded-full text-text-secondary transition-colors duration-200 hover:bg-secondary hover:text-primary md:hidden"
-              onClick={() => setMobileMenuOpen((prev) => !prev)}
-              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={mobileMenuOpen}
-            >
-              <AnimatePresence mode="wait" initial={false}>
-                {mobileMenuOpen ? (
-                  <motion.span
-                    key="close"
-                    initial={{ rotate: -90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: 90, opacity: 0 }}
-                    transition={{ duration: 0.15 }}
+          {/* Right side content (Links + Actions) */}
+          <div className="flex items-center gap-8">
+            {/* Desktop Navigation */}
+            <ul className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm font-medium text-text-secondary transition-colors duration-200 hover:text-primary"
                   >
-                    <X className="h-6 w-6" />
-                  </motion.span>
-                ) : (
-                  <motion.span
-                    key="menu"
-                    initial={{ rotate: 90, opacity: 0 }}
-                    animate={{ rotate: 0, opacity: 1 }}
-                    exit={{ rotate: -90, opacity: 0 }}
-                    transition={{ duration: 0.15 }}
-                  >
-                    <Menu className="h-6 w-6" />
-                  </motion.span>
-                )}
-              </AnimatePresence>
-            </button>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            {/* Right-side actions */}
+            <div className="flex items-center gap-3">
+              {/* Phone button */}
+              <a
+                href="tel:+447533046269"
+                className="flex h-10 w-10 items-center justify-center rounded-full text-text-secondary transition-colors duration-200 hover:bg-secondary hover:text-primary"
+                aria-label="Call us"
+              >
+                <Phone className="h-5 w-5" />
+              </a>
+
+              {/* Book Now CTA */}
+              <a
+                href="https://widget.treatwell.co.uk/place/jss-beauty/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:inline-flex items-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:brightness-110 hover:shadow-md"
+              >
+                Book Now
+              </a>
+
+              {/* Mobile hamburger button */}
+              <button
+                ref={toggleButtonRef}
+                type="button"
+                className="flex h-10 w-10 items-center justify-center rounded-full text-text-secondary transition-colors duration-200 hover:bg-secondary hover:text-primary md:hidden"
+                onClick={() => setMobileMenuOpen((prev) => !prev)}
+                aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={mobileMenuOpen}
+              >
+                <AnimatePresence mode="wait" initial={false}>
+                  {mobileMenuOpen ? (
+                    <motion.span
+                      key="close"
+                      initial={{ rotate: -90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: 90, opacity: 0 }}
+                      transition={{ duration: 0.15 }}
+                    >
+                      <X className="h-6 w-6" />
+                    </motion.span>
+                  ) : (
+                    <motion.span
+                      key="menu"
+                      initial={{ rotate: 90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: -90, opacity: 0 }}
+                      transition={{ duration: 0.15 }}
+                    >
+                      <Menu className="h-6 w-6" />
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </button>
+            </div>
           </div>
         </nav>
       </header>

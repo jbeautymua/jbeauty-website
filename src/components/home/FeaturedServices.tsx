@@ -48,7 +48,7 @@ const cardVariants = {
 export default function FeaturedServices() {
   return (
     <section className="bg-background py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-[1400px] mx-auto">
         <div className="text-center mb-12">
           <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-bold mb-4">
             Our Services

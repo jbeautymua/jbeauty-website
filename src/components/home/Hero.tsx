@@ -15,7 +15,7 @@ export default function Hero() {
         <img src="/hero-image.jpg" alt="" className="w-full h-full object-cover" aria-hidden="true" />
       </div>
       {/* Centered content */}
-      <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
+      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
         <motion.h1
           className="font-[family-name:var(--font-cormorant)] text-4xl leading-tight font-bold text-primary md:text-5xl lg:text-6xl"
           initial={{ opacity: 0, y: 32 }}
@@ -31,7 +31,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
-          Julie — Freelance beautician in London. Bridal makeup, party glam, and skincare touch-ups.
+          Professional beauty services tailored to enhance your natural beauty.
+          Based in Wellington, London.
         </motion.p>
 
         {/* CTA buttons */}
