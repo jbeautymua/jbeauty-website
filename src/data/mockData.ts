@@ -1,0 +1,197 @@
+import { ServiceCategory, PortfolioItem } from "@/types";
+
+export const serviceCategories: ServiceCategory[] = [
+  {
+    id: "threading",
+    name: "Threading",
+    description: "Precise hair removal using the traditional threading technique",
+    icon: "Sparkles",
+    services: [
+      { id: "th-1", name: "Eyebrow Threading", duration: "15 min", price: 7.00, description: "Precise shaping using the traditional threading technique for clean, defined brows.", categoryId: "threading" },
+      { id: "th-2", name: "Upper Lip", duration: "10 min", price: 4.00, description: "Quick and gentle upper lip threading for smooth, hair-free skin.", categoryId: "threading" },
+      { id: "th-3", name: "Chin", duration: "10 min", price: 4.50, description: "Precise chin hair removal with minimal irritation.", categoryId: "threading" },
+      { id: "th-4", name: "Sides", duration: "10 min", price: 5.00, description: "Gentle threading along the sideburn and cheek area.", categoryId: "threading" },
+      { id: "th-5", name: "Full Face", duration: "25 min", price: 18.00, description: "Complete facial threading including eyebrows, upper lip, chin, and sides.", categoryId: "threading" },
+      { id: "th-6", name: "Neck", duration: "10 min", price: 5.00, description: "Smooth, clean neckline with precise threading.", categoryId: "threading" },
+      { id: "th-7", name: "Forehead", duration: "10 min", price: 4.00, description: "Removal of fine forehead hair for a clean finish.", categoryId: "threading" },
+      { id: "th-8", name: "Eyebrow Re-shape", duration: "20 min", price: 9.00, description: "Complete brow redesign with threading for a fresh, sculpted look.", categoryId: "threading" },
+    ],
+  },
+  {
+    id: "tinting",
+    name: "Tinting",
+    description: "Enhance your features with professional colour",
+    icon: "Palette",
+    services: [
+      { id: "tn-1", name: "Eyebrow Tint", duration: "15 min", price: 9.00, description: "Semi-permanent colour to enhance and define your natural brow shape.", categoryId: "tinting" },
+      { id: "tn-2", name: "Eyelash Tint", duration: "20 min", price: 11.00, description: "Darken lashes for a defined, mascara-free look.", categoryId: "tinting" },
+      { id: "tn-3", name: "Brow & Lash Tint Combo", duration: "30 min", price: 17.00, description: "Both lash and brow tinting for a complete eye-framing effect.", categoryId: "tinting" },
+      { id: "tn-4", name: "Henna Brows", duration: "40 min", price: 28.00, description: "Natural henna dye that tints both brow hairs and skin for a filled-in look lasting up to 6 weeks.", categoryId: "tinting" },
+    ],
+  },
+  {
+    id: "lash-treatments",
+    name: "Lash Treatments",
+    description: "Beautiful lashes that enhance your eyes",
+    icon: "Eye",
+    services: [
+      { id: "lt-1", name: "Lash Lift", duration: "45 min", price: 32.00, description: "Semi-permanent treatment that curls and lifts your natural lashes for up to 8 weeks.", categoryId: "lash-treatments" },
+      { id: "lt-2", name: "Lash Lift & Tint", duration: "60 min", price: 38.00, description: "Lift and colour your lashes for a wide-eyed, mascara-free look.", categoryId: "lash-treatments" },
+      { id: "lt-3", name: "Lash Extensions - Classic", duration: "90 min", price: 55.00, description: "Individual lash extensions for a natural, fuller look.", categoryId: "lash-treatments" },
+      { id: "lt-4", name: "Lash Extensions - Infill", duration: "45 min", price: 30.00, description: "Maintenance fill to keep your lash extensions looking fresh.", categoryId: "lash-treatments" },
+    ],
+  },
+  {
+    id: "brow-lamination",
+    name: "Brow Lamination",
+    description: "Restructure brow hairs for a fuller, uniform look",
+    icon: "Brush",
+    services: [
+      { id: "bl-1", name: "Brow Lamination", duration: "45 min", price: 30.00, description: "Restructure brow hairs for a fuller, more uniform look that lasts up to 8 weeks.", categoryId: "brow-lamination" },
+      { id: "bl-2", name: "Brow Lamination & Tint", duration: "60 min", price: 38.00, description: "Lamination and tint combo for maximum brow definition and fullness.", categoryId: "brow-lamination" },
+      { id: "bl-3", name: "Brow Lamination, Tint & Wax", duration: "75 min", price: 45.00, description: "The ultimate brow package — lamination, tint, and wax for a perfectly sculpted finish.", categoryId: "brow-lamination" },
+    ],
+  },
+  {
+    id: "facials",
+    name: "Facials & Skincare",
+    description: "Rejuvenating treatments for glowing skin",
+    icon: "Flower2",
+    services: [
+      { id: "fc-1", name: "Express Facial", duration: "30 min", price: 28.00, description: "A quick refresh with cleansing, exfoliation, and hydration.", categoryId: "facials" },
+      { id: "fc-2", name: "Deep Cleansing Facial", duration: "60 min", price: 50.00, description: "Thorough cleansing with extraction, mask, and nourishing serum application.", categoryId: "facials" },
+      { id: "fc-3", name: "Hydrating Glow Facial", duration: "60 min", price: 55.00, description: "Intensive hydration treatment for dry, dull skin with hyaluronic acid and vitamin C.", categoryId: "facials" },
+      { id: "fc-4", name: "Anti-Ageing Facial", duration: "75 min", price: 65.00, description: "Target fine lines and wrinkles with collagen-boosting ingredients and massage techniques.", categoryId: "facials" },
+    ],
+  },
+  {
+    id: "waxing",
+    name: "Waxing",
+    description: "Smooth, long-lasting hair removal",
+    icon: "Droplets",
+    services: [
+      { id: "wx-1", name: "Half Leg Wax", duration: "20 min", price: 15.00, description: "Smooth legs from knee to ankle.", categoryId: "waxing" },
+      { id: "wx-2", name: "Full Leg Wax", duration: "35 min", price: 25.00, description: "Complete leg waxing from hip to toe.", categoryId: "waxing" },
+      { id: "wx-3", name: "Underarm Wax", duration: "15 min", price: 9.00, description: "Quick and effective underarm hair removal.", categoryId: "waxing" },
+      { id: "wx-4", name: "Bikini Wax", duration: "20 min", price: 15.00, description: "Tidy bikini line for a clean look.", categoryId: "waxing" },
+      { id: "wx-5", name: "Hollywood Wax", duration: "30 min", price: 30.00, description: "Complete intimate area hair removal.", categoryId: "waxing" },
+      { id: "wx-6", name: "Full Arm Wax", duration: "25 min", price: 15.00, description: "Smooth arms from shoulder to wrist.", categoryId: "waxing" },
+    ],
+  },
+  {
+    id: "makeup",
+    name: "Makeup",
+    description: "Professional makeup for every occasion",
+    icon: "Scissors",
+    services: [
+      { id: "mk-1", name: "Day Makeup", duration: "45 min", price: 35.00, description: "Natural, polished look perfect for everyday events.", categoryId: "makeup" },
+      { id: "mk-2", name: "Evening / Glam Makeup", duration: "60 min", price: 50.00, description: "Full glam look for special evenings, parties, and events.", categoryId: "makeup" },
+      { id: "mk-3", name: "Bridal Makeup", duration: "90 min", price: 110.00, description: "Stunning bridal look — long-lasting and photograph-ready.", categoryId: "makeup" },
+      { id: "mk-4", name: "Bridal Trial", duration: "60 min", price: 55.00, description: "Pre-wedding makeup trial to perfect your bridal look.", categoryId: "makeup" },
+    ],
+  },
+  {
+    id: "hair",
+    name: "Hair Styling",
+    description: "Beautiful styles for every occasion",
+    icon: "Sparkles",
+    services: [
+      { id: "hr-1", name: "Blow Dry", duration: "30 min", price: 22.00, description: "Professional blow dry for a sleek, voluminous finish.", categoryId: "hair" },
+      { id: "hr-2", name: "Updo / Event Styling", duration: "60 min", price: 45.00, description: "Elegant updo or styling for events, parties, and special occasions.", categoryId: "hair" },
+      { id: "hr-3", name: "Bridal Hair", duration: "90 min", price: 110.00, description: "Beautiful bridal hairstyling with trial included.", categoryId: "hair" },
+    ],
+  },
+  {
+    id: "body-treatments",
+    name: "Body Treatments",
+    description: "Relaxing and rejuvenating body care",
+    icon: "Heart",
+    services: [
+      { id: "bt-1", name: "Back Massage", duration: "30 min", price: 28.00, description: "Targeted massage to relieve tension in the back and shoulders.", categoryId: "body-treatments" },
+      { id: "bt-2", name: "Full Body Massage", duration: "60 min", price: 50.00, description: "Complete relaxation massage from head to toe.", categoryId: "body-treatments" },
+      { id: "bt-3", name: "Body Scrub & Wrap", duration: "60 min", price: 45.00, description: "Exfoliating scrub followed by a hydrating body wrap.", categoryId: "body-treatments" },
+    ],
+  },
+  {
+    id: "packages",
+    name: "Packages & Combos",
+    description: "Best value beauty bundles",
+    icon: "Gift",
+    services: [
+      { id: "pk-1", name: "Brow & Lash Package", duration: "60 min", price: 42.00, description: "Eyebrow threading + tint + lash tint combo at a special price.", categoryId: "packages" },
+      { id: "pk-2", name: "Pamper Package", duration: "120 min", price: 85.00, description: "Deep cleansing facial + back massage + eyebrow threading.", categoryId: "packages" },
+      { id: "pk-3", name: "Bridal Package", duration: "180 min", price: 240.00, description: "Complete bridal prep: makeup trial, bridal makeup, bridal hair, and facial.", categoryId: "packages" },
+      { id: "pk-4", name: "Girls Day Out", duration: "90 min", price: 70.00, description: "Facial + makeup + blow dry — perfect for a girls' day treat.", categoryId: "packages" },
+    ],
+  },
+  {
+    id: "nails",
+    name: "Nail Treatments",
+    description: "Manicures and pedicures for beautiful nails",
+    icon: "Gem",
+    services: [
+      { id: "nl-1", name: "Classic Manicure", duration: "30 min", price: 16.00, description: "Shape, buff, cuticle care, and polish application.", categoryId: "nails" },
+      { id: "nl-2", name: "Gel Manicure", duration: "45 min", price: 25.00, description: "Long-lasting gel polish manicure with UV curing.", categoryId: "nails" },
+      { id: "nl-3", name: "Classic Pedicure", duration: "40 min", price: 20.00, description: "Relaxing pedicure with foot soak, exfoliation, and polish.", categoryId: "nails" },
+      { id: "nl-4", name: "Gel Pedicure", duration: "50 min", price: 30.00, description: "Luxury pedicure with long-lasting gel polish finish.", categoryId: "nails" },
+    ],
+  },
+  {
+    id: "skincare",
+    name: "Advanced Skincare",
+    description: "Targeted treatments for specific skin concerns",
+    icon: "Zap",
+    services: [
+      { id: "sk-1", name: "Chemical Peel", duration: "45 min", price: 45.00, description: "Professional-grade peel to improve skin texture, tone, and clarity.", categoryId: "skincare" },
+      { id: "sk-2", name: "Microneedling", duration: "60 min", price: 75.00, description: "Stimulate collagen production for firmer, smoother skin.", categoryId: "skincare" },
+      { id: "sk-3", name: "LED Light Therapy", duration: "30 min", price: 30.00, description: "Non-invasive light therapy for acne, anti-ageing, and skin rejuvenation.", categoryId: "skincare" },
+    ],
+  },
+];
+
+export const portfolioItems: PortfolioItem[] = [
+  { id: "p1", title: "Natural Brow Shaping", category: "Eyebrows", imageUrl: "", gradientFrom: "#EDE8E3", gradientTo: "#E0D9D3" },
+  { id: "p2", title: "Bridal Glam Makeup", category: "Makeup", imageUrl: "", gradientFrom: "#E8E2DC", gradientTo: "#D9D0C7" },
+  { id: "p3", title: "Lash Lift & Tint", category: "Lashes", imageUrl: "", gradientFrom: "#DDD8D3", gradientTo: "#CFC8C0" },
+  { id: "p4", title: "Blow Dry Styling", category: "Hair", imageUrl: "", gradientFrom: "#E5DFD8", gradientTo: "#D6CEC5" },
+  { id: "p5", title: "Hydrating Facial Glow", category: "Skincare", imageUrl: "", gradientFrom: "#DBD6D0", gradientTo: "#CCC5BC" },
+  { id: "p6", title: "Brow Lamination", category: "Eyebrows", imageUrl: "", gradientFrom: "#F0EBE6", gradientTo: "#E0D9D3" },
+  { id: "p7", title: "Evening Glam Look", category: "Makeup", imageUrl: "", gradientFrom: "#E2DDD7", gradientTo: "#D4CCC4" },
+  { id: "p8", title: "Henna Brows", category: "Eyebrows", imageUrl: "", gradientFrom: "#E8E0D8", gradientTo: "#D8CFC5" },
+  { id: "p9", title: "Full Face Threading", category: "Eyebrows", imageUrl: "", gradientFrom: "#EAE5E0", gradientTo: "#DCD5CD" },
+  { id: "p10", title: "Gel Nail Art", category: "Nails", imageUrl: "", gradientFrom: "#DED9D4", gradientTo: "#D0C9C1" },
+  { id: "p11", title: "Updo Styling", category: "Hair", imageUrl: "", gradientFrom: "#E6DDD5", gradientTo: "#D4C8BC" },
+  { id: "p12", title: "Deep Cleanse Facial", category: "Skincare", imageUrl: "", gradientFrom: "#E0DBD5", gradientTo: "#D2CBC3" },
+];
+
+export const portfolioCategories = [
+  "All",
+  "Eyebrows",
+  "Makeup",
+  "Lashes",
+  "Hair",
+  "Skincare",
+  "Nails",
+];
+
+export const businessInfo = {
+  name: "JSS Beauty",
+  phone: "+447533046269",
+  phoneDisplay: "07533 046269",
+  email: "swanju2003@yahoo.co.in",
+  instagram: "https://www.instagram.com/jbeauty_j",
+  instagramHandle: "@jbeauty_j",
+  whatsapp: "https://wa.me/447533046269",
+  treatwell: "https://widget.treatwell.co.uk/place/jss-beauty/",
+  location: "Wellington, London SM6 8NF",
+  googleMapsUrl: "https://maps.google.com/?q=Wellington,+London+SM6+8NF",
+  hours: {
+    monday: "9:00 AM - 6:00 PM",
+    tuesday: "9:00 AM - 6:00 PM",
+    wednesday: "9:00 AM - 6:00 PM",
+    thursday: "9:00 AM - 8:00 PM",
+    friday: "9:00 AM - 8:00 PM",
+    saturday: "10:00 AM - 5:00 PM",
+    sunday: "Closed",
+  },
+};

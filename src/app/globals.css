@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #18181B;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #F4F4F5;
+  --color-accent: #E4E4E7;
+  --color-background: #FAFAFA;
+  --color-foreground: #1E1E24;
+  --color-light: #FFFFFF;
+  --color-text-primary: #1E1E24;
+  --color-text-secondary: #6D6D78;
+  --color-muted-foreground: #6D6D78;
+  --color-border: #E4E4E8;
+  --color-whatsapp: #25D366;
+
+  --font-cormorant: "Cormorant Garamond", Georgia, serif;
+  --font-inter: "Inter", system-ui, sans-serif;
+}
+
+/* Mobile-first base styles */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-inter);
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
+}
+
+/* Prevent iOS zoom on input focus */
+input,
+select,
+textarea {
+  font-size: 16px !important;
+}
+
+/* Safe area insets for notched devices */
+.safe-top { padding-top: env(safe-area-inset-top); }
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom); }
+.safe-left { padding-left: env(safe-area-inset-left); }
+.safe-right { padding-right: env(safe-area-inset-right); }
+
+/* Touch-friendly button sizes */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+:root {
+  --gradient-hero: linear-gradient(135deg, #F8F8FA 0%, #F4F4F6 100%);
+  --shadow-elegant: 0 4px 20px -4px rgba(24, 24, 27, 0.08);
+  --shadow-hover: 0 8px 30px -6px rgba(24, 24, 27, 0.12);
+}
+
+/* Smooth transitions */
+.transition-base {
+  transition: all 300ms ease;
+}
