@@ -202,6 +202,16 @@ export async function deleteSubmission(id: string) {
   revalidatePath("/admin/submissions");
 }
 
+export async function deleteSubmissions(ids: string[]) {
+  const supabase = await requireAuth();
+  const { error } = await supabase
+    .from("contact_submissions")
+    .delete()
+    .in("id", ids);
+  if (error) throw new Error(error.message);
+  revalidatePath("/admin/submissions");
+}
+
 // ============================================================
 // Image Upload
 // ============================================================
