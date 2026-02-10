@@ -31,8 +31,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
-          Professional beauty services tailored to enhance your natural beauty.
-          Based in Wellington, London.
+          Julie — Freelance beautician in London. Bridal makeup, party glam, and skincare touch-ups.
         </motion.p>
 
         {/* CTA buttons */}
