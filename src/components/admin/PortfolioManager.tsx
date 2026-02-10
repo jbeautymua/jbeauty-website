@@ -202,40 +202,6 @@ export default function PortfolioManager({ items }: Props) {
               onUpload={handleUpload}
             />
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-1.5">Gradient From</label>
-              <div className="flex gap-2 items-center">
-                <input
-                  type="color"
-                  value={gradientFrom}
-                  onChange={(e) => setGradientFrom(e.target.value)}
-                  className="w-10 h-10 rounded border border-border cursor-pointer"
-                />
-                <input
-                  value={gradientFrom}
-                  onChange={(e) => setGradientFrom(e.target.value)}
-                  className="flex-1 rounded-lg border border-border px-3 py-2 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition"
-                />
-              </div>
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-foreground mb-1.5">Gradient To</label>
-              <div className="flex gap-2 items-center">
-                <input
-                  type="color"
-                  value={gradientTo}
-                  onChange={(e) => setGradientTo(e.target.value)}
-                  className="w-10 h-10 rounded border border-border cursor-pointer"
-                />
-                <input
-                  value={gradientTo}
-                  onChange={(e) => setGradientTo(e.target.value)}
-                  className="flex-1 rounded-lg border border-border px-3 py-2 text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition"
-                />
-              </div>
-            </div>
-          </div>
           <div>
             <label className="block text-sm font-medium text-foreground mb-1.5">Sort Order</label>
             <input
