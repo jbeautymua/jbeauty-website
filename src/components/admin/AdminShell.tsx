@@ -9,6 +9,7 @@ import {
   Image,
   Building2,
   MessageSquare,
+  Info,
   LogOut,
   Menu,
   X,
@@ -21,6 +22,7 @@ const navItems = [
   { href: "/admin/categories", label: "Categories", icon: FolderOpen },
   { href: "/admin/services", label: "Services", icon: Scissors },
   { href: "/admin/portfolio", label: "Portfolio", icon: Image },
+  { href: "/admin/about", label: "About Page", icon: Info },
   { href: "/admin/business", label: "Business Info", icon: Building2 },
   { href: "/admin/submissions", label: "Submissions", icon: MessageSquare },
 ];

@@ -176,6 +176,7 @@ export async function updateBusinessInfo(data: {
   location?: string;
   google_maps_url?: string;
   hours?: Record<string, string>;
+  about_image_url?: string;
 }) {
   const supabase = await requireAuth();
   const { error } = await supabase
@@ -184,8 +185,10 @@ export async function updateBusinessInfo(data: {
     .eq("id", 1);
   if (error) throw new Error(error.message);
   revalidatePath("/");
+  revalidatePath("/about");
   revalidatePath("/contact");
   revalidatePath("/admin/business");
+  revalidatePath("/admin/about");
 }
 
 // ============================================================

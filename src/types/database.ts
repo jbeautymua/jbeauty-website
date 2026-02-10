@@ -124,6 +124,7 @@ export type Database = {
           location: string;
           google_maps_url: string;
           hours: Record<string, string>;
+          about_image_url: string;
           updated_at: string;
         };
         Insert: {
@@ -139,6 +140,7 @@ export type Database = {
           location: string;
           google_maps_url: string;
           hours: Record<string, string>;
+          about_image_url?: string;
           updated_at?: string;
         };
         Update: {
@@ -153,6 +155,7 @@ export type Database = {
           location?: string;
           google_maps_url?: string;
           hours?: Record<string, string>;
+          about_image_url?: string;
           updated_at?: string;
         };
         Relationships: [];
