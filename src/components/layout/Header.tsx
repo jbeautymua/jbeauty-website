@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -14,6 +15,7 @@ const navLinks = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -97,16 +99,23 @@ export default function Header() {
           <div className="flex items-center gap-8">
             {/* Desktop Navigation */}
             <ul className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm font-medium text-text-secondary transition-colors duration-200 hover:text-primary"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className={`text-sm transition-colors duration-200 hover:text-primary ${
+                        isActive
+                          ? "font-semibold text-primary"
+                          : "font-medium text-text-secondary"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
 
             {/* Right-side actions */}
