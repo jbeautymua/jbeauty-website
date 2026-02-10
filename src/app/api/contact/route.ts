@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { submitContactForm } from "@/lib/data";
+import { sendOwnerNotification, sendCustomerConfirmation } from "@/lib/email";
 
 export async function POST(request: Request) {
   try {
@@ -20,6 +21,20 @@ export async function POST(request: Request) {
         { error: result.error },
         { status: 500 }
       );
+    }
+
+    // Send email notifications in parallel — don't block the response
+    const emailResults = await Promise.allSettled([
+      sendOwnerNotification({ name, email, phone, message }),
+      sendCustomerConfirmation({ name, email, phone, message }),
+    ]);
+
+    for (const result of emailResults) {
+      if (result.status === "rejected") {
+        console.error("Email send failed:", result.reason);
+      } else if (!result.value.success) {
+        console.error("Email send error:", result.value.error);
+      }
     }
 
     return NextResponse.json(
