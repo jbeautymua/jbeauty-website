@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { Camera } from "lucide-react";
 import type { PortfolioItem } from "@/types";
 
@@ -24,10 +25,21 @@ export default function PortfolioGrid({ items, onItemClick }: PortfolioGridProps
             whileTap={{ scale: 0.97 }}
             onClick={() => onItemClick(item)}
             className="aspect-square rounded-lg overflow-hidden cursor-pointer relative group"
-            style={{
-              background: `linear-gradient(135deg, ${item.gradientFrom}, ${item.gradientTo})`,
-            }}
+            style={
+              item.imageUrl
+                ? undefined
+                : { background: `linear-gradient(135deg, ${item.gradientFrom}, ${item.gradientTo})` }
+            }
           >
+            {item.imageUrl && (
+              <Image
+                src={item.imageUrl}
+                alt={item.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 50vw, 33vw"
+              />
+            )}
             {/* Hover overlay */}
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
               <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center gap-2 text-white">

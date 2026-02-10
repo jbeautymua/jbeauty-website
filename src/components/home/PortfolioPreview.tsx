@@ -1,16 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
+import type { PortfolioItem } from "@/types";
 
-const portfolioItems = [
-  { title: "Natural Brows", gradient: "from-stone-100 to-stone-200" },
-  { title: "Bridal Glam", gradient: "from-neutral-100 to-neutral-200" },
-  { title: "Lash Lift", gradient: "from-stone-200 to-stone-300" },
-  { title: "Hair Styling", gradient: "from-amber-50 to-amber-100" },
-  { title: "Facial Glow", gradient: "from-neutral-50 to-neutral-100" },
-  { title: "Brow Lamination", gradient: "from-stone-50 to-stone-100" },
-];
+interface PortfolioPreviewProps {
+  items: PortfolioItem[];
+}
 
 const containerVariants = {
   hidden: {},
@@ -30,7 +27,7 @@ const itemVariants = {
   },
 };
 
-export default function PortfolioPreview() {
+export default function PortfolioPreview({ items }: PortfolioPreviewProps) {
   return (
     <section className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
@@ -56,15 +53,28 @@ export default function PortfolioPreview() {
           viewport={{ once: true, margin: "-50px" }}
           className="grid grid-cols-2 md:grid-cols-3 gap-4"
         >
-          {portfolioItems.map((item) => (
+          {items.map((item) => (
             <motion.div
-              key={item.title}
+              key={item.id}
               variants={itemVariants}
               className="group relative aspect-square rounded-lg overflow-hidden cursor-pointer"
             >
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${item.gradient}`}
-              />
+              {item.imageUrl ? (
+                <Image
+                  src={item.imageUrl}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                />
+              ) : (
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background: `linear-gradient(135deg, ${item.gradientFrom}, ${item.gradientTo})`,
+                  }}
+                />
+              )}
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 

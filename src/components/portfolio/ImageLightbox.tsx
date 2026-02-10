@@ -2,6 +2,7 @@
 
 import { useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { X } from "lucide-react";
 import type { PortfolioItem } from "@/types";
 
@@ -68,13 +69,26 @@ export default function ImageLightbox({ item, onClose }: ImageLightboxProps) {
             onClick={(e: React.MouseEvent) => e.stopPropagation()}
             className="w-full max-w-2xl flex flex-col items-center"
           >
-            {/* Image placeholder with gradient */}
+            {/* Image / gradient fallback */}
             <div
-              className="w-full aspect-[3/4] md:aspect-square rounded-xl overflow-hidden shadow-2xl"
-              style={{
-                background: `linear-gradient(135deg, ${item.gradientFrom}, ${item.gradientTo})`,
-              }}
-            />
+              className="relative w-full aspect-[3/4] md:aspect-square rounded-xl overflow-hidden shadow-2xl"
+              style={
+                item.imageUrl
+                  ? undefined
+                  : { background: `linear-gradient(135deg, ${item.gradientFrom}, ${item.gradientTo})` }
+              }
+            >
+              {item.imageUrl && (
+                <Image
+                  src={item.imageUrl}
+                  alt={item.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 672px"
+                  priority
+                />
+              )}
+            </div>
 
             {/* Title */}
             <div className="mt-4 text-center">

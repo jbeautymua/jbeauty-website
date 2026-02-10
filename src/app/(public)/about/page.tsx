@@ -246,9 +246,9 @@ export default function AboutPage() {
               </div>
               <div>
                 <h3 className="font-semibold text-primary mb-1">Address</h3>
-                <p className="text-text-secondary text-sm">Wellington, London SM6 8NF</p>
+                <p className="text-text-secondary text-sm">Wellington, UK</p>
                 <a
-                  href="https://maps.google.com/?q=Wellington,+London+SM6+8NF"
+                  href="https://maps.google.com/?q=Wellington,+UK"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-accent hover:text-accent/80 text-sm mt-2 transition-colors"
@@ -293,16 +293,19 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          {/* Map Placeholder */}
+          {/* Google Maps Embed */}
           <motion.div variants={fadeInUp}>
-            <div className="rounded-lg bg-secondary/30 aspect-video flex items-center justify-center">
-              <div className="text-center space-y-3">
-                <MapPin
-                  className="w-12 h-12 text-primary/30 mx-auto"
-                  strokeWidth={1}
-                />
-                <p className="text-text-secondary text-sm">Map placeholder</p>
-              </div>
+            <div className="rounded-lg overflow-hidden aspect-video">
+              <iframe
+                src="https://www.google.com/maps?q=Wellington,+UK&z=14&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="JSS Beauty location on Google Maps"
+              />
             </div>
           </motion.div>
         </div>
