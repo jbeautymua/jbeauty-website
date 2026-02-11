@@ -38,10 +38,10 @@ export default function PortfolioPreview({ items }: PortfolioPreviewProps) {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-bold mb-4">
             Our Work
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-lg md:text-xl">
             A glimpse of our recent transformations
           </p>
         </motion.div>

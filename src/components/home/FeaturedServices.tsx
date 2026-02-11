@@ -50,10 +50,10 @@ export default function FeaturedServices() {
     <section className="bg-background py-20 px-4">
       <div className="max-w-[1400px] mx-auto">
         <div className="text-center mb-12">
-          <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-bold mb-4">
             Our Services
           </h2>
-          <p className="text-text-secondary max-w-2xl mx-auto">
+          <p className="text-text-secondary text-md md:text-xl max-w-3xl mx-auto">
             Discover our range of professional beauty treatments designed to
             make you look and feel your best.
           </p>

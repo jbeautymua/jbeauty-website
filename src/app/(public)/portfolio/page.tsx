@@ -15,7 +15,7 @@ export default async function PortfolioPage() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-[family-name:var(--font-cormorant)] text-foreground">
             Our Portfolio
           </h1>
-          <p className="mt-3 text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
+          <p className="mt-3 text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto">
             Browse our collection of beauty transformations and find inspiration
             for your next look.
           </p>

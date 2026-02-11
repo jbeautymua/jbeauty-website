@@ -95,10 +95,10 @@ export default function AboutContent({ aboutImageUrl }: Props) {
         viewport={{ once: true, margin: "-50px" }}
         variants={fadeInUp}
       >
-        <h1 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-bold text-primary mb-4">
+        <h1 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-bold text-primary mb-4">
           About JSS Beauty
         </h1>
-        <p className="text-text-secondary max-w-2xl mx-auto text-lg">
+        <p className="text-text-secondary max-w-2xl mx-auto text-lg md:text-xl">
           Discover our story, our passion for beauty, and why hundreds of clients
           trust us with their care.
         </p>

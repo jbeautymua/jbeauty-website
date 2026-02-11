@@ -27,7 +27,7 @@ export default function ContactPage() {
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-[family-name:var(--font-cormorant)] mb-4">
           Get in Touch
         </h1>
-        <p className="text-muted-foreground max-w-xl mx-auto text-base md:text-lg">
+        <p className="text-muted-foreground max-w-xl mx-auto text-lg md:text-xl">
           Have a question or want to book an appointment? We&apos;d love to hear
           from you. Reach out and we&apos;ll get back to you as soon as possible.
         </p>

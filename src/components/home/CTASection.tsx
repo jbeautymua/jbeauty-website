@@ -12,10 +12,10 @@ export default function CTASection() {
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <h2 className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="font-[family-name:var(--font-cormorant)] text-4xl md:text-5xl font-bold mb-4">
           Ready to Enhance Your Beauty?
         </h2>
-        <p className="text-text-secondary mb-8">
+        <p className="text-text-secondary mb-8 text-lg">
           Book your appointment today and experience the JSS Beauty difference.
         </p>
 

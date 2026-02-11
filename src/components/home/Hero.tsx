@@ -64,11 +64,11 @@ export default function Hero() {
       </div>
       {/* Centered content */}
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
-        <div className="flex items-center justify-center">
+        <div className="flex min-h-[200px] items-center justify-center sm:min-h-[180px] md:min-h-[160px]">
           <AnimatePresence mode="wait">
             <motion.h1
               key={currentHeadline}
-              className="font-[family-name:var(--font-cormorant)] text-4xl leading-tight font-bold text-primary md:text-5xl lg:text-6xl"
+              className="font-[family-name:var(--font-cormorant)] text-5xl font-bold text-primary md:text-6xl lg:text-7xl"
               variants={sentenceVariants}
               initial="hidden"
               animate="visible"
@@ -88,7 +88,7 @@ export default function Hero() {
         </div>
 
         <motion.p
-          className="mx-auto mt-6 max-w-xl text-lg text-text-secondary"
+          className="mx-auto mt-6 max-w-2xl text-lg md:text-xl text-text-secondary"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}

@@ -85,11 +85,11 @@ export default function Header() {
           isScrolled ? "bg-white shadow-md" : "bg-transparent"
         }`}
       >
-        <nav className="mx-auto flex h-20 max-w-[1400px] items-center justify-between px-4 sm:px-6 lg:px-8">
+        <nav className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Logo */}
           <Link
             href="/"
-            className="font-[family-name:var(--font-cormorant)] text-2xl font-bold text-text-primary tracking-tight"
+            className="font-[family-name:var(--font-cormorant)] text-2xl font-extrabold text-text-primary tracking-tight"
             onClick={closeMobileMenu}
           >
             JSS Beauty
@@ -105,7 +105,7 @@ export default function Header() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className={`text-sm transition-colors duration-200 hover:text-primary ${
+                      className={`transition-colors duration-200 hover:text-primary ${
                         isActive
                           ? "font-semibold text-primary"
                           : "font-medium text-text-secondary"
