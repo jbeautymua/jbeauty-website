@@ -52,8 +52,15 @@ export default function Hero() {
       style={{ background: "var(--gradient-hero)" }}
       aria-label="Hero"
     >
-      <div className="absolute inset-0 opacity-20">
-        <img src="/hero-image.jpg" alt="" className="w-full h-full object-cover" aria-hidden="true" />
+      <div className="absolute inset-0 opacity-20 overflow-hidden">
+        <motion.img
+          src="/hero-image.jpg"
+          alt=""
+          className="w-full h-full object-cover"
+          animate={{ scale: [1, 1.2, 1] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          aria-hidden="true"
+        />
       </div>
       {/* Centered content */}
       <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
