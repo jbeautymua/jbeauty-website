@@ -1,21 +1,27 @@
 "use client";
 
 import { useState } from "react";
-import { Clock } from "lucide-react";
+import { Clock, LucideIcon } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Service } from "@/types";
 
 interface ServiceCardProps {
   service: Service;
+  icon?: LucideIcon;
 }
 
-export default function ServiceCard({ service }: ServiceCardProps) {
+export default function ServiceCard({ service, icon: Icon }: ServiceCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const formattedPrice = `\u00A3${service.price.toFixed(2)}`;
 
   return (
-    <div className="bg-white rounded-lg p-5 shadow-sm border border-border/50">
+    <div className="bg-white rounded-lg p-6 shadow-sm border border-border/50">
+      {Icon && (
+        <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center mb-4">
+          <Icon className="w-5 h-5 text-text-primary" />
+        </div>
+      )}
       <h3 className="font-semibold text-lg text-text-primary">
         {service.name}
       </h3>

@@ -1,7 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { 
+  ChevronDown, 
+  Sparkles, 
+  Eye, 
+  Flower2, 
+  Scissors, 
+  Heart, 
+  MessageSquare,
+  Zap,
+  Ear
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { ServiceCategory } from "@/types";
 import ServiceCard from "./ServiceCard";
@@ -11,8 +21,22 @@ interface ServiceListProps {
   activeCategory: string;
 }
 
+// Map category names to icons
+const getCategoryIcon = (categoryName: string) => {
+  const name = categoryName.toLowerCase();
+  if (name.includes("brow")) return Sparkles;
+  if (name.includes("lash") || name.includes("eye")) return Eye;
+  if (name.includes("face") || name.includes("skin")) return Flower2;
+  if (name.includes("hair")) return Scissors;
+  if (name.includes("wax")) return Zap;
+  if (name.includes("massage")) return Heart;
+  if (name.includes("pierc")) return Ear;
+  return Sparkles; // Default
+};
+
 function CategoryAccordion({ category }: { category: ServiceCategory }) {
   const [isOpen, setIsOpen] = useState(false);
+  const CategoryIcon = getCategoryIcon(category.name);
 
   return (
     <div className="border-b border-border last:border-b-0">
@@ -48,7 +72,7 @@ function CategoryAccordion({ category }: { category: ServiceCategory }) {
           >
             <div className="grid grid-cols-1 gap-4 pb-4">
               {category.services.map((service) => (
-                <ServiceCard key={service.id} service={service} />
+                <ServiceCard key={service.id} service={service} icon={CategoryIcon} />
               ))}
             </div>
           </motion.div>
@@ -58,7 +82,7 @@ function CategoryAccordion({ category }: { category: ServiceCategory }) {
       {/* Desktop: always visible grid */}
       <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-4 pb-6">
         {category.services.map((service) => (
-          <ServiceCard key={service.id} service={service} />
+          <ServiceCard key={service.id} service={service} icon={CategoryIcon} />
         ))}
       </div>
     </div>

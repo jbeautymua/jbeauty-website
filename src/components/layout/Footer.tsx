@@ -33,6 +33,13 @@ export default function Footer() {
             </p>
             <div className="mt-6 flex items-center gap-4">
               <a
+                href="tel:+447533046269"
+                aria-label="Call us"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-white"
+              >
+                <Phone className="h-5 w-5" />
+              </a>
+              <a
                 href="https://www.instagram.com/jbeauty_j"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -49,6 +56,13 @@ export default function Footer() {
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-white"
               >
                 <WhatsAppIcon className="h-5 w-5" />
+              </a>
+              <a
+                href="mailto:jssbeauty@gmail.com"
+                aria-label="Email us"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-white"
+              >
+                <Mail className="h-5 w-5" />
               </a>
             </div>
           </div>

@@ -29,6 +29,19 @@ export default function ServicesContent({ categories }: ServicesContentProps) {
           categories={categories}
           activeCategory={activeCategory}
         />
+
+        {/* Services Footer Info */}
+        <div className="mt-16 text-center space-y-4 max-w-2xl mx-auto px-4">
+          <p className="text-text-secondary">
+            All services include a consultation to understand your needs and preferences
+          </p>
+          <a 
+            href="/contact"
+            className="inline-block font-semibold text-primary hover:underline"
+          >
+            Contact me for custom packages and group bookings &rarr;
+          </a>
+        </div>
       </section>
     </>
   );
