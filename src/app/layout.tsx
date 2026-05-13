@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { StructuredData } from "@/components/StructuredData";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({
   subsets: ["latin"],
@@ -63,6 +64,7 @@ export default function RootLayout({
       <body className="antialiased">
         <StructuredData />
         {children}
+        <GoogleAnalytics gaId="G-YX0VTMCRHD" />
       </body>
     </html>
   );
