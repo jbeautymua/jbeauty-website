@@ -3,6 +3,7 @@ import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { StructuredData } from "@/components/StructuredData";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import Script from "next/script";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -65,6 +66,9 @@ export default function RootLayout({
         <StructuredData />
         {children}
         <GoogleAnalytics gaId="G-YX0VTMCRHD" />
+        <Script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=$
+        {process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID}`}
+          crossOrigin="anonymous"></Script>
       </body>
     </html>
   );
