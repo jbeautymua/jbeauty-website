@@ -7,12 +7,17 @@ export default async function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const supabase = await createSupabaseServer();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  try {
+    const supabase = await createSupabaseServer();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
 
-  if (!user) {
+    if (!user) {
+      redirect("/admin/login");
+    }
+  } catch (error) {
+    console.error("Supabase not configured:", error);
     redirect("/admin/login");
   }
 
