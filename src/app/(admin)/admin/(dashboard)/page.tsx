@@ -2,28 +2,42 @@ import { createSupabaseServer } from "@/lib/supabase-server";
 import { FolderOpen, Scissors, Image, MessageSquare } from "lucide-react";
 
 export default async function AdminDashboardPage() {
-  const supabase = await createSupabaseServer();
-
-  const [categories, services, portfolio, submissions] = await Promise.all([
-    supabase.from("service_categories").select("*", { count: "exact", head: true }),
-    supabase.from("services").select("*", { count: "exact", head: true }),
-    supabase.from("portfolio_items").select("*", { count: "exact", head: true }),
-    supabase.from("contact_submissions").select("*", { count: "exact", head: true }),
-  ]);
-
-  const stats = [
-    { label: "Categories", count: categories.count ?? 0, icon: FolderOpen },
-    { label: "Services", count: services.count ?? 0, icon: Scissors },
-    { label: "Portfolio Items", count: portfolio.count ?? 0, icon: Image },
-    { label: "Submissions", count: submissions.count ?? 0, icon: MessageSquare },
+  let stats = [
+    { label: "Categories", count: 0, icon: FolderOpen },
+    { label: "Services", count: 0, icon: Scissors },
+    { label: "Portfolio Items", count: 0, icon: Image },
+    { label: "Submissions", count: 0, icon: MessageSquare },
   ];
+  let recentSubmissions: any[] = [];
 
-  // Recent submissions
-  const { data: recentSubmissions } = await supabase
-    .from("contact_submissions")
-    .select("*")
-    .order("created_at", { ascending: false })
-    .limit(5);
+  try {
+    const supabase = await createSupabaseServer();
+
+    const [categories, services, portfolio, submissions] = await Promise.all([
+      supabase.from("service_categories").select("*", { count: "exact", head: true }),
+      supabase.from("services").select("*", { count: "exact", head: true }),
+      supabase.from("portfolio_items").select("*", { count: "exact", head: true }),
+      supabase.from("contact_submissions").select("*", { count: "exact", head: true }),
+    ]);
+
+    stats = [
+      { label: "Categories", count: categories.count ?? 0, icon: FolderOpen },
+      { label: "Services", count: services.count ?? 0, icon: Scissors },
+      { label: "Portfolio Items", count: portfolio.count ?? 0, icon: Image },
+      { label: "Submissions", count: submissions.count ?? 0, icon: MessageSquare },
+    ];
+
+    // Recent submissions
+    const { data } = await supabase
+      .from("contact_submissions")
+      .select("*")
+      .order("created_at", { ascending: false })
+      .limit(5);
+
+    recentSubmissions = data ?? [];
+  } catch (error) {
+    console.error("Supabase not configured:", error);
+  }
 
   return (
     <div>

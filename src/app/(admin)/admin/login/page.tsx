@@ -8,6 +8,8 @@ import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { createSupabaseBrowser } from "@/lib/supabase-browser";
 
+export const dynamic = 'force-dynamic';
+
 const loginSchema = z.object({
   email: z.string().email("Please enter a valid email"),
   password: z.string().min(1, "Password is required"),
@@ -29,6 +31,11 @@ export default function AdminLoginPage() {
   });
 
   const onSubmit = async (data: LoginFormData) => {
+    if (!supabase) {
+      setError("Authentication service not configured");
+      return;
+    }
+
     setError(null);
     const { error: authError } = await supabase.auth.signInWithPassword({
       email: data.email,

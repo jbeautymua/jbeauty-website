@@ -1,6 +1,7 @@
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resendApiKey = process.env.RESEND_API_KEY;
+const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 const FROM_EMAIL = "onboarding@resend.dev";
 const OWNER_EMAIL = "jssbeautymua@gmail.com";
@@ -165,6 +166,11 @@ function customerConfirmationHtml(data: ContactData): string {
 export async function sendOwnerNotification(
   data: ContactData
 ): Promise<{ success: boolean; error?: string }> {
+  if (!resend) {
+    console.error("Resend not configured");
+    return { success: false, error: "Email service not configured" };
+  }
+
   try {
     const { error } = await resend.emails.send({
       from: FROM_EMAIL,
@@ -191,6 +197,11 @@ export async function sendOwnerNotification(
 export async function sendCustomerConfirmation(
   data: ContactData
 ): Promise<{ success: boolean; error?: string }> {
+  if (!resend) {
+    console.error("Resend not configured");
+    return { success: false, error: "Email service not configured" };
+  }
+
   try {
     const { error } = await resend.emails.send({
       from: FROM_EMAIL,

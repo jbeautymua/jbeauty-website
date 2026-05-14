@@ -2,12 +2,20 @@ import { createSupabaseServer } from "@/lib/supabase-server";
 import BusinessInfoForm from "@/components/admin/BusinessInfoForm";
 
 export default async function AdminBusinessPage() {
-  const supabase = await createSupabaseServer();
-  const { data } = await supabase
-    .from("business_info")
-    .select("*")
-    .eq("id", 1)
-    .single();
+  let data: any = null;
+
+  try {
+    const supabase = await createSupabaseServer();
+    const result = await supabase
+      .from("business_info")
+      .select("*")
+      .eq("id", 1)
+      .single();
+
+    data = result.data;
+  } catch (error) {
+    console.error("Supabase not configured:", error);
+  }
 
   return (
     <div>
