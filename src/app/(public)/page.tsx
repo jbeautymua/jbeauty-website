@@ -4,6 +4,7 @@ import PortfolioPreview from "@/components/home/PortfolioPreview";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import CTASection from "@/components/home/CTASection";
 import { getPortfolioItems } from "@/lib/data";
+import AdUnit from "@/components/ads/AdUnit";
 
 export default async function HomePage() {
   const portfolioItems = await getPortfolioItems();
@@ -12,6 +13,7 @@ export default async function HomePage() {
     <>
       <Hero />
       <FeaturedServices />
+      <AdUnit adFormat="auto" />
       <PortfolioPreview items={portfolioItems.slice(0, 6)} />
       <WhyChooseUs />
       <CTASection />

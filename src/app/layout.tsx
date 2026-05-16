@@ -60,15 +60,21 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const ADSENSE_CLIENT =
+    process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID ||
+    "ca-pub-4621643742071237";
+
   return (
     <html lang="en" className={`${inter.variable} ${cormorant.variable}`}>
       <body className="antialiased">
         <StructuredData />
         {children}
         <GoogleAnalytics gaId="G-YX0VTMCRHD" />
-        <Script async src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=$
-        {process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID}`}
-          crossOrigin="anonymous"></Script>
+        <Script
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+        />
       </body>
     </html>
   );
