@@ -3,6 +3,7 @@ import { Inter, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import { StructuredData } from "@/components/StructuredData";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Script from "next/script";
 
 const inter = Inter({
@@ -70,6 +71,7 @@ export default function RootLayout({
         <StructuredData />
         {children}
         <GoogleAnalytics gaId="G-YX0VTMCRHD" />
+        <SpeedInsights />
         <Script
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
           strategy="afterInteractive"
