@@ -129,6 +129,16 @@ export default function Header() {
                 <Phone className="h-5 w-5" />
               </a>
 
+              {/* Shop Now CTA */}
+              <a
+                href="https://mall.riman.com/Jssbeauty/products/category/5?Concern=94&fromMenu=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hidden sm:inline-flex items-center rounded-full border border-border px-5 py-2 text-sm font-semibold text-text-primary transition-all duration-200 hover:bg-secondary hover:border-text-primary"
+              >
+                Shop Now
+              </a>
+
               {/* Book Now CTA */}
               <a
                 href="https://widget.treatwell.co.uk/place/jss-beauty/"
@@ -223,9 +233,29 @@ export default function Header() {
                   </motion.li>
                 ))}
 
-                {/* Mobile Book Now button */}
+                {/* Mobile Shop Now button */}
                 <motion.li
                   className="w-full pt-4"
+                  variants={{
+                    open: { y: 0, opacity: 1 },
+                    closed: { y: -20, opacity: 0 },
+                  }}
+                  transition={{ duration: 0.25, ease: "easeOut" }}
+                >
+                  <a
+                    href="https://mall.riman.com/Jssbeauty/products/category/5?Concern=94&fromMenu=true"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={closeMobileMenu}
+                    className="flex min-h-[48px] w-full items-center justify-center rounded-full border border-border px-6 py-3 text-lg font-semibold text-text-primary transition-all duration-200 hover:bg-secondary hover:border-text-primary"
+                  >
+                    Shop Now
+                  </a>
+                </motion.li>
+
+                {/* Mobile Book Now button */}
+                <motion.li
+                  className="w-full pt-2"
                   variants={{
                     open: { y: 0, opacity: 1 },
                     closed: { y: -20, opacity: 0 },
