@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   title: {
-    default: "JSS Beauty | Professional Beauty Services in London",
+    default: "JSS Beauty | London Makeup Artist",
     template: "%s | JSS Beauty",
   },
   description:
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     locale: "en_GB",
     url: "https://www.jssbeauty.co.uk/",
     siteName: "JSS Beauty",
-    title: "JSS Beauty | Professional Beauty Services in London",
+    title: "JSS Beauty | London Makeup Artist",
     description:
       "Premium beauty services in London. Eyebrow threading, lash lifts, facials, waxing, and makeup.",
   },
