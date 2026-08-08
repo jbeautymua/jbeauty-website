@@ -5,7 +5,7 @@ export function StructuredData() {
     name: "JSS Beauty",
     description:
       "Premium beauty services in London including eyebrow threading, tinting, lash lifts, facials, waxing, and makeup.",
-    url: "https://jssbeauty.com",
+    url: "https://www.jssbeauty.co.uk/",
     telephone: "+447533046269",
     email: "swanju2003@yahoo.co.in",
     address: {

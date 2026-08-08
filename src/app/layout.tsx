@@ -27,6 +27,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.jssbeauty.co.uk/"),
+  alternates: {
+    canonical: "/",
+  },
   title: {
     default: "JSS Beauty | Professional Beauty Services in London",
     template: "%s | JSS Beauty",
@@ -45,6 +49,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_GB",
+    url: "https://www.jssbeauty.co.uk/",
     siteName: "JSS Beauty",
     title: "JSS Beauty | Professional Beauty Services in London",
     description:
